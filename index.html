@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telegram botga xabar yuborish</title>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div>
+      <h2>Bog'lanish</h2>
+      <form id="contact-form">
+        <div>
+          <label for="name">Ismingiz: </label><br />
+          <input
+            type="text"
+            id="name"
+            placeholder="Ismingizni kiriting..."
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label for="message"></label><br />
+          <textarea
+            id="message"
+            placeholder="Xabaringizni kiriting..."
+          ></textarea>
+        </div>
+        <br />
+        <button type="submit" id="submit-btn">Yuborish</button>
+        <div id="status"></div>
+      </form>
+    </div>
+  </body>
+</html>
