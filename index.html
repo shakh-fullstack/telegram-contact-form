@@ -11,24 +11,20 @@
       <h2>Bog'lanish</h2>
       <form id="contact-form">
         <div>
-          <label for="name">Ismingiz: </label><br />
-          <input
-            type="text"
-            id="name"
-            placeholder="Ismingizni kiriting..."
-            required
-          />
+          <label for="name">Your name:</label><br />
+          <input type="text" id="name" placeholder="Name?" required />
         </div>
         <br />
         <div>
-          <label for="message"></label><br />
+          <label for="message">Your message:</label><br />
           <textarea
             id="message"
-            placeholder="Xabaringizni kiriting..."
+            placeholder="Write your message..."
+            required
           ></textarea>
         </div>
         <br />
-        <button type="submit" id="submit-btn">Yuborish</button>
+        <button type="submit" id="submit-btn">Submit</button>
         <div id="status"></div>
       </form>
     </div>

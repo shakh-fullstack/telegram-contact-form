@@ -1,9 +1,10 @@
-const contactForma = document.getElementById("contact-form");
-const statusDiv = document.getElementById("status");
+const contactForma = document.querySelector("#contact-form");
+const statusDiv = document.querySelector("#status");
 
 const BOT_TOKEN = "YOUR_BOT_TOKEN";
-const CHAT_ID = "YOUR_CHAT_ID";
+const CHAT_ID = "YOUR_BOT_ID";
 
+const submitBtn = document.querySelector("#submit-btn");
 contactForma.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -14,7 +15,12 @@ contactForma.addEventListener("submit", async (event) => {
 
   statusDiv.textContent = "Yuborilmoqda...";
 
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
+
   try {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
     const response = await fetch(
       `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
       {
@@ -38,5 +44,8 @@ contactForma.addEventListener("submit", async (event) => {
     }
   } catch (error) {
     statusDiv.textContent = `❌ Xatolik  yuz berdi: ${error.message}`;
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit";
   }
 });
